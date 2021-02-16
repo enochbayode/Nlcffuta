@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Life Campus Fellowship, FUTA</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" >
+  <link href="css/style.css"  rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <link href="owl.carousel.min.css" rel="stylesheet">
+  <link href="owl.theme.default.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css " rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+   <!-- Navbar Begins -->
+   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+    <div class="container"> 
+      <div class="float-right" style="width: 80%;"> 
+        <a class="navbar-brand" href="/"><img src="../img/new life logo.png" style="width: 12%;"></a>
+      </div>
+    
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="oi oi-menu"></span> Menu
+      </button>
+      <div class="collapse navbar-collapse" id="ftco-nav" style="text-align: right;">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item"><a href="/" class="nav-link">Home</a></li>
+          <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="/events" class="nav-link">Events</a></li>
+          <li class="nav-item"><a href="/messages" class="nav-link">Messages</a></li>
+          <li class="nav-item active"><a href="/blogs" class="nav-link">Blogs</a></li>
+          <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>     
+    </div>
+  </nav>
+<!-- Navbar Ends -->
+
+   <div class="blog-top-img">
+    <h2 class="top-text">Our Blogs</h2><br>
+   </div>
+   
+   <section>
+      <div class="container">
+        <div class="section">
+          <div class="row"  >
+            <% for (var i = 0; i < blog.length; i++  ){ %>
+              <div class="col-sm-4 justify-content-center d-flex">
+                  <div class="">
+                      
+                      <a href="<%= blog[i]. _id %>" class=" blog-a">
+                      <img src="<%= blog[i].imgUrl %> " height="120px" class="msg-img">
+          
+                      <div class="box-cont shadow p-3 mb-5 bg-white rounded">
+                          <i class="fa fa-calendar blog-icons" aria-hidden="true">
+                            <span class="day"><%= blog[i].date.toString().slice(0,4) %></span>
+                            <span class="day"><%= blog[i].date.toString().slice(8,10) %></span>
+                            <span class="mos"><%= blog[i].date.toString().slice(4,7) %></span>
+                            <span class="yrs"><%= blog[i].date.toString().slice(11,15) %></span>
+                          </i><br><br>
+                          <h6 class="blog-title"><%= blog[i].title  %></h6>
+                          <h6 style="color:#495057">Gene: <%= blog[i].category %></h6>
+                          <p class="blog-text" style="color: #768495;"><%= blog[i].excerpt %></p>
+                          
+                      </div>
+                      </a>
+                  </div>
+              </div>
+            <% } %>
+          </div> 
+        </div>
+      </div>
+   </section>
+   
+   
+   <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+   <script src="Js/owl.carousel.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" type="text/javascript" ></script>
+   <script src="Js/main.js" ></script>
+</body>
+</html>

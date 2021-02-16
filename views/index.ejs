@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Life Campus Fellowship, FUTA</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" >
+  <link href="css/style.css"  rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <link href="owl.carousel.min.css" rel="stylesheet">
+  <link href="owl.theme.default.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css " rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- Navbar Begins -->
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+      <div class="container"> 
+        <div class="float-right" style="width: 80%;"> 
+          <a class="navbar-brand animate__animated animate__rotateInDownLeft" href="/"><img src="../img/new life logo.png" style="width: 10%;"></a>
+        </div>
+      
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="oi oi-menu"></span> Menu
+        </button>
+        <div class="collapse navbar-collapse" id="ftco-nav" style="text-align: right;">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active"><a href="/" class="nav-link">Home</a></li>
+            <li class="nav-item"><a href="/about" class="nav-link">About</a></li>
+            <li class="nav-item"><a href="/events" class="nav-link">Events</a></li>
+            <li class="nav-item"><a href="/messages" class="nav-link">Messages</a></li>
+            <li class="nav-item"><a href="/blogs" class="nav-link">Blogs</a></li>
+            <li class="nav-item"><a href="/contact" class="nav-link">Contact</a></li>
+          </ul>
+        </div>     
+      </div>
+    </nav>
+  <!-- Navbar Ends -->
+    
+    <div class="home-top-img">
+      <h2 class="top-text">God's <b class="bt">Prestigious</b>  People</h2><br>
+      <!-- <center>
+      <button class="button-wrapper" type="button">Save your spirit</button>
+      </center> -->
+    </div>
+
+    <div class="container">
+      
+      <div class="section">
+        <div class="row">
+          <div class="col-sm-3"></div>
+      
+          <div class="col-sm-6">
+              <h2 class="text-center bolder">About Us</h2>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+        
+        <div class="row">
+          <div class="col-sm-1"></div>
+          <div class="col-sm-10">
+            <p style="margin-top: 0%; color: #768495;">
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error aut quas voluptatum, eaque molestiae quibusdam doloremque incidunt neque? Sequi sint molestiae iure harum! Dolore voluptatibus porro rerum fugit doloremque perferendis.
+              <a href="/about" class="learn-more"> Read more</a>
+            </p><br><br>
+          </div>
+          <div class="col-sm-1"></div>
+        </div>
+      
+      </div>
+
+    </div>
+
+    <div class="president">
+      <div class="container">
+        <div class="row section">
+          <% for (var i = 0; i < president.length; i++  ){ %>
+            <div class="col-sm-8">
+            <i class="fa fa-quote-left" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i>
+            <h3 class="bolder"><%= president[i].name %> </h3>
+            <p style="font-size: 23px">The President of New Life Campus Fellowship, FUTA</p>
+            <p style="font-size: 20px;">
+                <%= president[i].excerpt %>
+            </p>
+            <i class="fa fa-quote-right" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i><br>
+            </div>
+            <div class="col-sm-4">
+                <img src="<%= president[i].imgUrl %>" style="width: 100%; border-radius: 20px;">
+            </div>
+          <% } %>
+        </div>
+          
+      </div>
+    </div>
+
+    <div class="container">
+      
+      <div class="section">
+        <div class="row">
+          <div class="col-sm-3"></div>
+          <div class="col-sm-6 text-center">
+            <h2>Recent Messages.</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ut rem, labore amet accusantium sequi debitis maiores fugiat.</p>
+          </div>
+          <div class="col-sm-3"></div>
+        </div>
+        
+        <!-- Recent messages -->
+        
+        <div class="row">
+          <% for (var i = 0; i < Msg.length; i++  ){ %>
+            <div class="col-sm-4 justify-content-center d-flex animate__animated animate__zoomInLeft animate__delay-2s">
+              <div class="">
+                
+                <img src="<%= Msg[i].imgUrl %>"  height="150px" class="msg-img">
+
+                <div class="box shadow p-3 mb-5 bg-white rounded">
+                  <!-- bottom contents -->
+                  <div class="btm-box-content">
+                    <h5><%= Msg[i].title %></h5>
+                    <i class="fa fa-tag" aria-hidden="true" style="color:#495057;"></i><span style="color:#495057"> Gene: <%= Msg[i].category %></span><br>
+                    <i class="fa fa-user" aria-hidden="true" style="color:#495057;"></i><span style="color:#495057;"> Message by: </span><span> <%= Msg[i].name %></span><br>
+                    <i class="fa fa-calendar" aria-hidden="true" style="color:#495057;"></i><span style="color:#495057;">
+                      <span class="day"><%= Msg[i].date.toString().slice(0,4) %></span>
+                      <span class="day"><%= Msg[i].date.toString().slice(8,10) %></span>
+                      <span class="mos"><%= Msg[i].date.toString().slice(4,7) %></span>
+                      <span class="yrs"><%= Msg[i].date.toString().slice(11,15) %></span>
+                    </span><br>
+                    <p style="color:#495057"><%= Msg[i].excerpt %></p>
+                  </div>
+                  <center>
+                    <!-- download button -->
+                    <a href="<%= Msg[i].fileUrl %>" data-toggle="tooltip">
+                      <button class="btn btn-primary msg-btn">
+                        Download <i class="fa fa-download kuki"aria-hidden="true"></i> 
+                      </button>
+                    </a><br><br>
+
+                    <a href="/messages" data-toggle="tooltip">
+                    <button class="btn btn-primary msg-btn">
+                      Get more <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </button></a>
+                  </center>
+                </div>
+              </div>
+            </div>
+          <% } %>
+        </div> 
+
+        <!-- Recent message End here -->
+      </div>
+
+      <div class="section">
+        <div class="row ">
+          <div class="col-sm-3"></div>
+
+          <div class="col-sm-6">
+            <h2 class="text-center">Up Coming Events.</h2>
+          </div>
+
+          <div class="col-sm-3"></div>
+        </div><br><br>
+
+        <div class="row">
+          <% for (var i = 0; i < event.length; i++  ){ %>
+          <div class="col-sm-4 justify-content-center d-flex">
+              <div class="">
+                  <!-- <a href="#exampleModal2" class=" blog-a" data-toggle="modal" data-target="#exampleModal2"> -->
+                  <img src="<%= event[i].imgUrl %>" height="150px" class="msg-img">
+      
+                  <div class="box-cont shadow p-3 mb-5 bg-white rounded">
+                      <h5 class="blog-title"><%= event[i].title  %></h5>
+                      <i class="fa fa-calendar blog-icons" aria-hidden="true">
+                      <span class="day"><%= event[i].date.toString().slice(0,4) %></span>
+                      <span class="day"><%= event[i].date.toString().slice(8,10) %></span>
+                      <span class="mos"><%= event[i].date.toString().slice(4,7) %></span>
+                      <span class="yrs"><%= event[i].date.toString().slice(11,15) %></span>
+                      </i><br>
+                      <i class="fa fa-map-marker" aria-hidden="true" style="color:#495057;"></i><span class="bolder" style="color:#495057;"> <%= event[i].venue %></span><br>
+                      <p class="blog-text" style="color: #768495;"><%= event[i].excerpt %></p>
+                      
+                      <center>
+                        <a href="/events" data-toggle="tooltip">
+                          <button class="btn btn-primary msg-btn">
+                            View more <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                          </button>
+                        </a>
+                      </center>
+                  </div>
+                  <!-- </a> -->
+              </div>
+          </div>
+          <% } %>
+        </div>
+      </div>
+        
+    </div>
+
+    <div class="galler">
+      <div class="container">
+        <div class="row">
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-6">
+              <h2 class="text-center">Our Gallery.</h2>
+            </div>
+
+            <div class="col-sm-3"></div>
+        </div><br><br>
+      </div>
+    </div>
+
+    
+    <div class="wrapper">
+      <div class="carousel-gallery owl-carousel owl-theme">
+        <% for (var i = 0; i < gallery.length; i++  ){ %>
+        <div class="item">
+            <img class="d-block w-100 gal" src="<%= gallery[i].imgUrl %>" width="100%"> 
+        </div>
+        <% } %>       
+      </div>
+      
+    </div>
+    
+
+    <div class="container">
+      
+      <div class="section">
+        <div class="row">
+          <div class="col-sm-3"></div>
+        <div class="col-sm-6">
+          <h2 class="text-center">Recent Blogs.</h2><br><br>
+        </div>
+        <div class="col-sm-3"></div>
+        </div>
+
+        <!-- Recent Blogs -->
+        <div class="row " >
+          <% for (var i = 0; i < blog.length; i++  ){ %>
+            <div class="col-sm-4 justify-content-center d-flex">
+                <div class="">
+                    
+                    <a href="<%= blog[i]. _id %>" class=" blog-a">
+                    <img src="<%= blog[i].imgUrl %> " height="120px" class="msg-img">
+        
+                    <div class="box-cont shadow p-3 mb-5 bg-white rounded">
+                        <i class="fa fa-calendar blog-icons" aria-hidden="true">
+                          <span class="day"><%= blog[i].date.toString().slice(0,4) %></span>
+                          <span class="day"><%= blog[i].date.toString().slice(8,10) %></span>
+                          <span class="mos"><%= blog[i].date.toString().slice(4,7) %></span>
+                          <span class="yrs"><%= blog[i].date.toString().slice(11,15) %></span>
+                        </i><br><br>
+                        <h6 class="blog-title"><%= blog[i].title  %></h6>
+                        <h6 style="color:#495057">Gene: <%= blog[i].category %></h6>
+                        <p class="blog-text" style="color: #768495;"><%= blog[i].excerpt %></p>
+                        
+                    </div>
+                    </a>
+                </div>
+            </div>
+          <% } %>
+      </div>
+
+      <!-- Recent blog ends -->
+           
+      <div class="row">
+        <div class="col-sm-6"><br>
+          <i class="fa fa-quote-left" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i>
+          <p class="heading-text">
+            <span style="color: #495057;" class="dyn-text" id='text'></span><span class="cursor cursor-typin" id="cursor">&nbsp;</span>
+          </p>
+          <i class="fa fa-quote-right" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i><br><br>
+        </div>
+
+        <div class="col-sm-6">
+          <h3 class="text-center bolder">NEWSLETTER</h3>
+          <p class="text-center">Subcribe to our news letter to get updated about new events</p>
+          
+          <form action="/signUp" method="POST">
+            <div class="form-group" >
+              <input type="email" class="form-control sub-newsletter" width="15px;" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email address" required>
+            </div>
+            <center><button class="btn btn-primary sub-btn">Subcribe</button></center>
+          </form>
+          
+        </div>
+
+      </div>
+    </div>  
+  </div><br>
+
+      
+    <!-- bottom  section-->
+    <div class="bottom-section">
+      <hr style="background-color: rgb(212, 181, 6); height: 2px;">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-4">
+            <br><br>
+            <span class="name">New Life Campus</span><br>
+            <span class="name-lite">Fellowship, FUTA.</span><br><br>
+            
+            <p class="btm-dsg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ad cumque magnam</p>
+
+            <!--twitter-->
+            <a href=""><button type="button" class="btn social-link"><i class="fa fa-twitter"></i></button></a>
+            <!--Google-->
+            <a href=""><button type="button" class="btn social-link"><i class="fa fa-whatsapp"></i> </button></a>
+            <!--Google-->
+            <a href=""><button type="button" class="btn social-link"><i class="fa fa-facebook"></i> </button></a>
+            <!--Google-->
+            <a href=""><button type="button" class="btn social-link"><i class="fa fa-instagram"></i> </button></a>
+            <!--Youtube-->
+            <a href=""><button type="button" class="btn social-link"><i class="fa fa-youtube"></i> </button></a>
+          </div>
+          
+          <div class="col-sm-2">
+            <br><br>
+            <h4 class="btm-dsg">Quick Links</h4><br><br>
+            <span><a href="/about" class="btm-link blog-a"> About us</a></span><br><br>
+            <span><a href="/contact" class="btm-link blog-a"> Contact us</a></span><br><br>
+            <span><a href="/messages" class="btm-link blog-a"> Sermons</a></span><br><br>
+            <span><a href="/events" class="btm-link blog-a"> Events</a></span><br><br>
+            <span><a href="/blogs" class="btm-link blog-a"> Blogs</a></span><br><br>
+          </div>
+
+          <div class="col-sm-3">
+            <br><br>
+            <h4 class="btm-dsg">Contact Information</h4><br><br>
+            <span class="btm-dsg"><i class="fa fa-map-marker" aria-hidden="true"></i>   153 William plaza Futa, Akure</span><br><br>
+            <span><a href="" class="btm-link blog-a"><i class="fa fa-phone" aria-hidden="true"></i>   +234 8102396347</a></span><br><br>
+          </div>
+
+          <div class="col-sm-3">
+            <br><br>
+            <h4 class="btm-dsg">Service Days</h4><br><br>
+            <span class="btm-dsg"> Tuesday: Bible study<br>
+            <i class="fa fa-clock-o btm-dsg" aria-hidden="true"></i><span class="btm-dsg">  6:00pm - 7:30pm</span><br><br>
+
+            <span> Friday: Destiny Clinic</span><br>
+            <i class="fa fa-clock-o btm-dsg" aria-hidden="true"></i><span class="btm-dsg">  6:00pm - 7:30pm</span><br><br>
+
+            <span> Sunday: Glorious Service</span><br>
+            <i class="fa fa-clock-o btm-dsg" aria-hidden="true"></i><span class="btm-dsg">  8:00am - 10:30am</span><br><br><br><br><br>
+          </div>
+
+        </div>
+      
+        <center>
+          <p style="color: white;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe quae blanditiis provident? Dolores nesciunt dignissimos </p><br>
+          
+        </center>
+            
+      </div><br>
+      
+    </div>
+    <!-- Bottom section Ends -->
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="Js/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" type="text/javascript" ></script>
+    <script src="Js/main.js" ></script>
+</body>
+</html>

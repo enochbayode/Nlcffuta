@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Life Campus Fellowship, FUTA</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" >
+  <link href="css/design.css"  rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+  <link href="owl.carousel.min.css" rel="stylesheet">
+  <link href="owl.theme.default.min.css" rel="stylesheet">
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css " rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <div style="width: 70%;"> 
+                    <br>
+                    <a class="navbar-brand" href=""><img src="../img/new life logo.png" style="width: 60%;"></a><br><br>
+            </div>
+        </div>
+
+        <ul class="list-unstyled components">
+            <p>NAVIGATION</p>
+            <li class="">
+                <a href="/auth/profile" aria-expanded="false" class=""><i class="fa fa-user-circle" aria-hidden="true"></i> Profile</a>
+                
+            </li>
+
+            <li class="">
+                <a href="/UploadBgs" aria-expanded="false" class=""><i class="fa fa-paper-plane" aria-hidden="true"></i> Blogs</a>
+                
+            </li>
+
+            <li> 
+                <a href="/UploadEvts" class=""><i class="fa fa-calendar" aria-hidden="true"></i> Upcoming Events</a>
+                
+            </li>
+
+            <li> 
+                <a href="/UploadExs" class=""><i class="fa fa-users" aria-hidden="true"></i> Excos</a>
+                
+            </li>
+
+            <li class="">
+                <a href="/UploadMsg" aria-expanded="false" ><i class="fa fa-folder-o" aria-hidden="true"></i> Messages</a>
+            </li>
+
+            <li class="">
+                <a href="/UploadGal"><i class="fa fa-picture-o" aria-hidden="true"></i> Gallery</a>
+            </li>
+
+            <li class="active">
+                <a href="/UploadPresi"><i class="fa fa-user" aria-hidden="true"></i> President</a>
+            </li>
+        </ul>
+
+        
+    </nav>
+
+    <!-- Page Content Holder -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li>
+                            <a href="/auth/logout">
+                                <button class="btn btn-danger">Log Out  <i class="fa fa-sign-out" aria-hidden="true"></i></button>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="">
+                <!-- Button trigger modal -->
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+                    Edit Post
+                </button><br><br>
+            
+                <!-- Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true"> -->
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Edit President</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                            <form action="/admin/post-president" method="post" enctype="multipart/form-data">
+
+                                <div class="form-group">
+                                <label for="exampleInputName">Enter President name</label>
+                                <input type="name" name="name" class="form-control" id="exampleInputName" aria-describedby="nameHelp" placeholder="Enter your name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlTextarea1">President Speech</label>
+                                    <textarea class="form-control" type="text" name="excerpt" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="exampleFormControlFile1">Upload Image file (png,jpg & jpeg)</label>
+                                    <input type="file" name="imgUrl" class="form-control-file" id="exampleFormControlFile1" required>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                        <!-- <button type="button" class="btn btn-danger">Delete</button> -->
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="president">
+                <div class="container">
+                  <div class="section">
+                    <div class="row">
+                        <% for (var i = 0; i < president.length; i++  ){ %>
+                            <div class="col-sm-8">
+                            <i class="fa fa-quote-left" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i>
+                            <h3 class="bolder"><%= president[i].name %> </h3>
+                            <p style="font-size: 23px">The President of New Life Campus Fellowship, FUTA</p>
+                            <p style="font-size: 20px;">
+                                <%= president[i].excerpt %>
+                            </p>
+                            <i class="fa fa-quote-right" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i><br>
+                            </div>
+                            <div class="col-sm-4">
+                                <img src="<%= president[i].imgUrl %>" style="width: 100%; border-radius: 20px;">
+                            </div>
+    
+                            <!-- <button  data-toggle="modal" data-target="#popup<%= i %>" aria-labelledby= "exampleModalLongTitle<%= i  %>"  class="btn btn-primary" style="font-size:14px;padding:5px 35px">Edit</button> -->
+                            <button  data-toggle="modal" data-target="#popup<%= i + president.length %>" class="btn btn-danger float-right" style="font-size:14px;padding:5px 25px">Delete</button>
+                        
+                            
+                            <div class="modal fade" id="popup<%= i+ president.length  %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitles" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                  <div class="modal-content" style="padding:5%">
+                                    <h4 style="font-weight:bold; text-align:center">Do you want to Delete this post ?</h4><br>
+                                   <center> 
+                                        <form action="/admin/presidentDelete/<%= president[i].id %>" method="post">
+                                              <input type="hidden">
+                                              <button type="button" style="padding:10px 30px;" class="btn btn-secondary" data-dismiss="modal">No</button> 
+                                              <button class="btn btn-danger"  style="padding:10px 30px;" type="submit">Yes</button>  
+                                        </form>
+                                  </center>
+                                  </div>
+                                </div>
+                            </div>
+            
+                        <% } %>
+                    </div>
+
+                    <!-- <div class="row">
+
+                    </div> -->
+                  </div>
+                    
+                </div>
+            </div>
+
+            
+
+
+        </div>
+        
+    </div>
+</div>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <script src="Js/owl.carousel.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" type="text/javascript" ></script>
+    <script src="Js/main.js" ></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+          $('#sidebarCollapse').on('click', function () {
+              $('#sidebar').toggleClass('active');
+              $(this).toggleClass('active');
+          });
+      });
+  </script>
+</body>
+</html>
