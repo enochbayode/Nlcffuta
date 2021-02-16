@@ -2,8 +2,8 @@ module.exports = {
     databaseURL : 'process.env.',
     PORT:3000,
 
-    GMAIL_USER: 'bayodeenoch@gmail.com',
-    GMAIL_PASS: 'association'
+    GMAIL_USER: '',
+    GMAIL_PASS: ''
 }
 
 
