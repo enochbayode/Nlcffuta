@@ -12,7 +12,8 @@ const flash =  require('connect-flash');
 const session = require('express-session');
 const nodemailer = require('nodemailer');
 const multiparty = require("multiparty");
-require("dotenv").config();
+// require("dotenv").config();
+const {config} = require('dotenv');
 
 //declaration and creation of express app
 var app = express();
@@ -30,10 +31,31 @@ mongoose.set('useFindAndModify', false);
 // use create index set to true
 mongoose.set('useCreateIndex', true);
 
-mongoose.connect(secret.databaseURL, {
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-});
+// mongoose.connect(secret.process.env.databaseURL, {
+//     useNewUrlParser:true,
+//     useUnifiedTopology:true
+// });
+
+
+module.exports = () => {
+  config(); //invoking the dotenv config here
+  const uri = process.env.databaseURL;
+ 
+  connect(uri, {
+        //  dbName: process.env.DB_NAME,
+        //  user: process.env.DB_USER,
+        //  pass: process.env.DB_PASS,
+         useNewUrlParser: true,
+         useUnifiedTopology: true,
+         useFindAndModify: false,
+         useCreateIndex: true
+     })
+         .then(() => {
+             console.log('Connection estabislished with MongoDB');
+         })
+         .catch(error => console.error(error.message));
+ }
+
 
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
@@ -109,40 +131,40 @@ app.listen(secret.PORT, () => {
 
 
 // POST route from contact form
-const GMAIL_USER = process.env.GMAIL_USER
-const GMAIL_PASS = process.env.GMAIL_PASS
+// const GMAIL_USER = process.env.GMAIL_USER
+// const GMAIL_PASS = process.env.GMAIL_PASS
 
-app.post('/contact-us', (req, res) => {
+// app.post('/contact-us', (req, res) => {
 
   // Instantiate the SMTP server
-  const smtpTrans = nodemailer.createTransport({
-    host: 'smtp.gmail.com',
-    port: 465,
-    secure: true,
-    auth: {
-      user: GMAIL_USER,
-      pass: GMAIL_PASS
-    }
-  })
+  // const smtpTrans = nodemailer.createTransport({
+  //   host: 'smtp.gmail.com',
+  //   port: 465,
+  //   secure: true,
+  //   auth: {
+  //     user: GMAIL_USER,
+  //     pass: GMAIL_PASS
+  //   }
+  // })
 
   // Specify what the email will look like
-  const mailOpts = {
-    from: 'Your sender info here', // This is ignored by Gmail
-    to: GMAIL_USER,
-    subject: 'New message from contact form at NLCFFUTA.org',
-    text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
-  }
+  // const mailOpts = {
+  //   from: 'Your sender info here', // This is ignored by Gmail
+  //   to: GMAIL_USER,
+  //   subject: 'New message from contact form at NLCFFUTA.org',
+  //   text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+  // }
 
   // Attempt to send the email
-  smtpTrans.sendMail(mailOpts, (error, response) => {
-    if (error) {
-      console.log(error);
-      res.status(500).send("Something went wrong.");
-    } else {
-      res.status(200).send("Email successfully sent to recipient!");
-    }
-  })
-})
+//   smtpTrans.sendMail(mailOpts, (error, response) => {
+//     if (error) {
+//       console.log(error);
+//       res.status(500).send("Something went wrong.");
+//     } else {
+//       res.status(200).send("Email successfully sent to recipient!");
+//     }
+//   })
+// })
 
 
 
