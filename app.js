@@ -13,6 +13,7 @@ const session = require('express-session');
 const nodemailer = require('nodemailer');
 const multiparty = require("multiparty");
 // require("dotenv").config();
+const { connect, connection } = require('mongoose');
 const {config} = require('dotenv');
 
 //declaration and creation of express app
@@ -51,17 +52,31 @@ module.exports = () => {
          useCreateIndex: true
      })
          .then(() => {
-             console.log('Connection estabislished with MongoDB');
+             console.log('We are already connected to the server');
          })
          .catch(error => console.error(error.message));
  }
 
+ connection.on('connected', () => {
+  console.log('Mongoose connected to DB Cluster');
+})
 
-var db = mongoose.connection;
-db.on('error', console.error.bind(console, 'connection error:'));
-db.once('open', function() {
-  console.log("we are already connected to the server database")
-});
+connection.on('error', (error) => {
+  console.error(error.message);
+})
+
+connection.on('disconnected', () => {
+  console.log('Mongoose Disconnected');
+})
+
+
+// var db = mongoose.connection;
+// db.on('error', console.error.bind(console, 'connection error:'));
+// db.once('open', function() {
+//   console.log("we are already connected to the server database")
+// });
+
+
 
 // try {
 //   mongoose.connect(MONGODB_URI || secret.databaseURL, {
