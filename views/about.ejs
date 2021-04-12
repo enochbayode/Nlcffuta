@@ -113,9 +113,9 @@
                 </center>
                 <i class="fa fa-quote-left" aria-hidden="true" style="color:#377DFF; font-size:20px;"></i>
                   <p style="color:#495057;">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione laudantium 
-                    numquam magnam explicabo at unde vel, voluptatibus temporibus cupiditate neque minima pariatur 
-                    adipisci id distinctio quos dolore, impedit et!    
+                    It is to actualise self-motivation of the church to stand to do what is right in presence of the Lord 
+                    in serving Christ by ensuring that they continue to walk and live in Godly  standard even after 
+                    graduation as fellowship alumni. John 4:23   
                   </p>
                   <i class="fa fa-quote-right" aria-hidden="true" style="color:#377DFF; font-size:20px;"></i>
                  
@@ -154,9 +154,9 @@
                 </center>
                 <i class="fa fa-quote-left" aria-hidden="true" style="color:#377DFF; font-size:20px;"></i>
                   <p style="color:#495057;">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione laudantium 
-                    numquam magnam explicabo at unde vel, voluptatibus temporibus cupiditate neque minima pariatur 
-                    adipisci id distinctio quos dolore, impedit et!
+                    The major goal for this tenure is to establish a strong notion that the eyes of the church be enlightened
+                    as regards understanding to the life in the Spirit which is expected to consequently elicit spiritual-mindedness
+                    and spiritual productivity. Gal. 5: 16-17.   
                     
                   </p>
                   <i class="fa fa-quote-right" aria-hidden="true" style="color:#377DFF; font-size:20px;"></i>
@@ -237,198 +237,29 @@
             </div>
             <div class="col-sm-3"></div>
           </div>
-
-          <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-              <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-              <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="row">
-                  <% for (var i = 0; i < excos.length; i++  ){ %>
-                    <div class="col-sm-4">
-                        <div class="box shadow p-3 mb-5 bg-white rounded">
-                            <center>
-                              <div class="" style="width: 60%; height: 40%;">
-                                <img src="<%= excos[i].imgUrl %>" height="200px" class="excos-img">
-                              </div>
-                            </center>
-                            <!-- bottom contents  -->
-                            <div class="btm-box-content">
-                                <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> <%= excos[i].name %></span><br>
-                                <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> <%= excos[i].dept %></span><br>
-                                <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> <%= excos[i].phone  %></span><br>
-                                <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"><%= excos[i].office  %></span><br>
-                                <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span><%= excos[i].level  %></span><br>
-                            </div>
+          
+          <div class="row">
+            <% for (var i = 0; i < excos.length; i++  ){ %>
+              <div class="col-sm-4">
+                  <div class="box shadow p-3 mb-5 bg-white rounded">
+                      <center>
+                        <div class="" style="width: 60%; height: 40%;">
+                          <img src="<%= excos[i].imgUrl %>" height="200px" class="excos-img">
                         </div>
-                    </div>
-                  <% } %>
-                  
-                  
-              <!-- <div class="carousel-item">
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div class="box shadow p-3 mb-5 bg-white rounded">
-                      <div class="" style="width: 60%; height: 50%;">
-                        <img src="../img/person_1.jpg" class="excos-img">
-                      </div> -->
+                      </center>
                       <!-- bottom contents  -->
-                      <!-- <div class="btm-box-content">
-                        <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> Bro Emmanuel Omomowo</span><br>
-                        <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> Enterprenueship & Management Tech.</span><br>
-                        <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> 080346256251</span><br>
-                        <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"> The President</span><br>
-                        <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span> 500</span><br>
+                      <div class="btm-box-content">
+                          <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> <%= excos[i].name %></span><br>
+                          <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> <%= excos[i].dept %></span><br>
+                          <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> <%= excos[i].phone  %></span><br>
+                          <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"><%= excos[i].office  %></span><br>
+                          <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span><%= excos[i].level  %></span><br>
                       </div>
-                    </div>
-                  </div> -->
-                  <!-- <div class="col-sm-4">
-                    <div class="box shadow p-3 mb-5 bg-white rounded">
-                      <div class="" style="width: 60%; height: 50%;">
-                        <img src="../img/person_1.jpg" class="excos-img">
-                      </div> -->
-                      <!-- bottom contents  -->
-                      <!-- <div class="btm-box-content">
-                        <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> Bro Emmanuel Omomowo</span><br>
-                        <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> Enterprenueship & Management Tech.</span><br>
-                        <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> 080346256251</span><br>
-                        <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"> The President</span><br>
-                        <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span> 500</span><br>
-                      </div>
-                    </div>
                   </div>
-                  <div class="col-sm-4">
-                    <div class="box shadow p-3 mb-5 bg-white rounded">
-                      <div class="" style="width: 60%; height: 50%;">
-                        <img src="../img/person_1.jpg" class="excos-img">
-                      </div> -->
-                      <!-- bottom contents  -->
-                      <!-- <div class="btm-box-content">
-                        <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> Bro Emmanuel Omomowo</span><br>
-                        <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> Enterprenueship & Management Tech.</span><br>
-                        <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> 080346256251</span><br>
-                        <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"> The President</span><br>
-                        <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span> 500</span><br>
-                      </div>
-                    </div>
-                  </div>
-                </div>
               </div>
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div class="box shadow p-3 mb-5 bg-white rounded">
-                      <div class="" style="width: 60%; height: 50%;">
-                        <img src="../img/person_1.jpg" class="excos-img">
-                      </div> -->
-                      <!-- bottom contents  -->
-                      <!-- <div class="btm-box-content">
-                        <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> Bro Emmanuel Omomowo</span><br>
-                        <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> Enterprenueship & Management Tech.</span><br>
-                        <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> 080346256251</span><br>
-                        <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"> The President</span><br>
-                        <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span> 500</span><br>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="box shadow p-3 mb-5 bg-white rounded">
-                      <div class="" style="width: 60%; height: 50%;">
-                        <img src="../img/person_1.jpg" class="excos-img">
-                      </div> -->
-                      <!-- bottom contents  -->
-                      <!-- <div class="btm-box-content">
-                        <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> Bro Emmanuel Omomowo</span><br>
-                        <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> Enterprenueship & Management Tech.</span><br>
-                        <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> 080346256251</span><br>
-                        <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"> The President</span><br>
-                        <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span> 500</span><br>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="box shadow p-3 mb-5 bg-white rounded">
-                      <div class="" style="width: 60%; height: 50%;">
-                        <img src="../img/person_1.jpg" class="excos-img">
-                      </div> -->
-                      <!-- bottom contents  -->
-                      <!-- <div class="btm-box-content">
-                        <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> Bro Emmanuel Omomowo</span><br>
-                        <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> Enterprenueship & Management Tech.</span><br>
-                        <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> 080346256251</span><br>
-                        <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"> The President</span><br>
-                        <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span> 500</span><br>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div class="carousel-item">
-                <div class="row">
-                  <div class="col-sm-4">
-                    <div class="box shadow p-3 mb-5 bg-white rounded">
-                      <div class="" style="width: 60%; height: 50%;">
-                        <img src="../img/person_1.jpg" class="excos-img">
-                      </div> -->
-                      <!-- bottom contents  -->
-                      <!-- <div class="btm-box-content">
-                        <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> Bro Emmanuel Omomowo</span><br>
-                        <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> Enterprenueship & Management Tech.</span><br>
-                        <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> 080346256251</span><br>
-                        <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"> The President</span><br>
-                        <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span> 500</span><br>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="box shadow p-3 mb-5 bg-white rounded">
-                      <div class="" style="width: 60%; height: 50%;">
-                        <img src="../img/person_1.jpg" class="excos-img">
-                      </div> -->
-                      <!-- bottom contents  -->
-                      <!-- <div class="btm-box-content">
-                        <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> Bro Emmanuel Omomowo</span><br>
-                        <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> Enterprenueship & Management Tech.</span><br>
-                        <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> 080346256251</span><br>
-                        <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"> The President</span><br>
-                        <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span> 500</span><br>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="col-sm-4">
-                    <div class="box shadow p-3 mb-5 bg-white rounded">
-                      <div class="" style="width: 60%; height: 50%;">
-                        <img src="../img/person_1.jpg" class="excos-img">
-                      </div> -->
-                      <!-- bottom contents  -->
-                      <!-- <div class="btm-box-content">
-                        <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> Bro Emmanuel Omomowo</span><br>
-                        <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> Enterprenueship & Management Tech.</span><br>
-                        <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> 080346256251</span><br>
-                        <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"> The President</span><br>
-                        <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span> 500</span><br>
-                      </div>
-                    </div>
-                  </div>
-                </div> -->
-              </div>
-
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-              <!-- <span class="carousel-control-prev-icon" aria-hidden="true" style="color: #377DFF;"></span> -->
-              <i class="fa fa-arrow-left" style="color: #377DFF; background-color:white; padding:14px;border-radius:10px;"  aria-hidden="true"></i>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-              <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
-              <i class="fa fa-arrow-right" style="color:#377DFF; background-color:white; padding:14px;border-radius:10px;"  aria-hidden="true"></i>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
+            <% } %>
+          </div> 
+              
         </div>
           
       </div> 

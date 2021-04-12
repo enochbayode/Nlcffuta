@@ -63,8 +63,6 @@
             
             <!-- .col-md-8 -->
 
-            
-
             <div class="col-lg-4 sidebar ftco-animate">
               <div class="sidebar-box">
                 <form action="#" class="search-form">
@@ -87,16 +85,36 @@
               
               <div class="sidebar-box">
                 <h5 class="bolder">Recent Blogs</h5>
-                
+                <div class="row">
+                  <% for (var i = 0; i < blog.length; i++  ){ %>
+                    <div class="">
+                      <div class="col-sm-4">
+                        <img src="<%= blog[i].imgUrl %>" style="width: 100%;">
+                      </div>
+                      <div class="col-sm-8">
+                        <div class="text">
+                          <h3 class="blog-heading"><a href="#"><%= blog[i].excerpt %></a></h3>
+                          <a class="#">
+                            <i class="fa fa-calendar" aria-hidden="true">
+                              <span class="day"><%= blog[i].date.toString().slice(0,4) %></span>
+                              <span class="day"><%= blog[i].date.toString().slice(8,10) %></span>
+                              <span class="mos"><%= blog[i].date.toString().slice(4,7) %></span>
+                              <span class="yrs"><%= blog[i].date.toString().slice(11,15) %></span>
+                            </i>
+                            <i class="fa fa-user" aria-hidden="true"> Admin</i>
+                            <i class="fa fa-tags" aria-hidden="true"> <%= blog[i].category %></i>
+                          </a> 
+                        </div>
+                      </div>
+                    </div>
+                  <% } %>
+                </div>
                 
               </div>
   
               
-                
-              
             </div>
             
-  
           </div>
         </div>
       </section> <!-- .section -->

@@ -277,9 +277,12 @@ router.get('/UploadGal', (req,res)=>{
 })
 
 router.get('/blogs', (req,res)=>{
-
+    console.log('query = ', req.query)
+    const limit = req.query.limit ? req.query.limit: null;
+    const skip = req.query.skip ? req.query.skip: null;
   Blog
-      .find({})
+ //    .find({}, null, {limit: parseInt(skip), skip: parseInt(skip)})
+  .find({})  
       .sort({'date' : -1})
       .exec((err,blog)=>{
 
@@ -290,6 +293,7 @@ router.get('/blogs', (req,res)=>{
               blog:blog
       
           } );
+          console.log('blog ==> ', blog)
       })
 
 })

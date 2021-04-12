@@ -32,61 +32,30 @@ mongoose.set('useFindAndModify', false);
 // use create index set to true
 mongoose.set('useCreateIndex', true);
 
-// mongoose.connect(secret.process.env.databaseURL, {
-//     useNewUrlParser:true,
-//     useUnifiedTopology:true
-// });
-
-
-module.exports = () => {
-  config(); //invoking the dotenv config here
-  const uri = process.env.databaseURL;
+mongoose.connect(secret.databaseURL, {
+    useNewUrlParser:true,
+    useUnifiedTopology:true
+}).catch(err => {
+  console.log('could not connect to mongoDB', err)
+})
  
-  connect(uri, {
-        //  dbName: process.env.DB_NAME,
-        //  user: process.env.DB_USER,
-        //  pass: process.env.DB_PASS,
-         useNewUrlParser: true,
-         useUnifiedTopology: true,
-         useFindAndModify: false,
-         useCreateIndex: true
-     })
-         .then(() => {
-             console.log('We are already connected to the server');
-         })
-         .catch(error => console.error(error.message));
- }
 
- connection.on('connected', () => {
-  console.log('Mongoose connected to DB Cluster');
-})
-
-connection.on('error', (error) => {
-  console.error(error.message);
-})
-
-connection.on('disconnected', () => {
-  console.log('Mongoose Disconnected');
-})
-
-
-// var db = mongoose.connection;
+var db = mongoose.connection;
 // db.on('error', console.error.bind(console, 'connection error:'));
-// db.once('open', function() {
-//   console.log("we are already connected to the server database")
-// });
+db.once('open', function() {
+console.log("we are already connected to the server database")
+});
 
 
+app.use((error, req, res, next) => {
+  res.status(error.status || 500).send({
+  error: {
+  status: error.status || 500,
+  message: error.message || 'Internal Server Error',
+  },
+});
+});
 
-// try {
-//   mongoose.connect(MONGODB_URI || secret.databaseURL, {
-//       useNewUrlParser: true,
-//       useUnifiedTopology: true
-//     }, () =>
-//     console.log("We are already connected to the server database"));
-// } catch (error) {
-//   console.log("Could not connect to the server");
-// }
 
 // -----------creation of database ends----------------------
 
@@ -132,7 +101,8 @@ app.use('/auth', userRoute)
 // const postRoute = require('./routes/postRoute');
 // app.use('/post', postRoute)
 
-const adminRoutes = require('./routes/adminRoute')
+const adminRoutes = require('./routes/adminRoute');
+const { response } = require('express');
 app.use('/admin', adminRoutes );
 
 
