@@ -55,8 +55,7 @@ router.post('/post-bg',  (req,res)=>{
                 date: req.body.date,
                 category:req.body.category,
                 excerpt:req.body.excerpt,
-                content:req.body.content,
-                // fileUrl:'/uploads/files/' +req.files.fileUrl[0].filename,
+                editor1:req.body.editor1,
                 imgUrl: '/uploads/files/' +req.files.imgUrl[0].filename
             }).save((err,blog)=>{
                 if(err){

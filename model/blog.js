@@ -22,7 +22,7 @@ const blogSchema = new Schema({
         type:String
     },
 
-    content: {
+    editor1: {
         type:String
     }
 

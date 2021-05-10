@@ -115,18 +115,23 @@ var carousel = function() {
 };
 carousel();
 
+// window.onload = function(){
+// }
+
 const typedTextSpan = document.querySelector("#text");
 
 const textArray = [
+	"James 1:5  If any of you lack wisdom, let him ask of God, that giveth to all men liberally, and upbraideth not; and it shall be given him.",
 	"Rom 8:6  For to be carnally minded is death; but to be spiritually minded is life and peace. ", 
 	"Php 2:3  Let nothing be done through strife or vainglory; but in lowliness of mind let each esteem other better than themselves. ",
-	"Rom 8:28  And we know that all things work together for good to them that love God, to them who are the called according to his purpose. ", 
+	"James 1:14  But every man is tempted, when he is drawn away of his own lust, and enticed. ",
 	"Rom 8:24  For we are saved by hope: but hope that is seen is not hope: for what a man seeth, why doth he yet hope for? ", 
+	"3John 1:2  Beloved, I wish above all things that thou mayest prosper and be in health, even as thy soul prospereth. "
 ];
 
-const typingDelay = 100;
-const erasingdelay = 100;
-const newTextDelay = 1000;
+const typingDelay = 85;
+const erasingdelay = 75;
+const newTextDelay = 900;
 let textArrayIndex = 0;
 let charIndex = 0;
 
@@ -158,24 +163,37 @@ document.addEventListener("DOMContentLoaded", function(){
 	setTimeout(type, newTextDelay)
 });
 
-// $(document).ready(function () {
-// 	$('#sidebarCollapse').on('click', function () {
-// 		$('#sidebar').toggleClass('active');
-// 		$(this).toggleClass('active');
-// 	});
-// });
 
-//get the form by its id
-// const form = document.getElementById("contact-form"); 
+document.onreadystatechange = function() {
+    if (document.readyState !== "complete") {
+        document.querySelector("body").style.visibility = "hidden";
+        document.querySelector("#loader").style.visibility = "visible";
+    } else {
+        document.querySelector("#loader").style.display = "none";
+        document.querySelector("body").style.visibility = "visible";
+    }
+};
 
-//1.
-// const formEvent = form.addEventListener("submit", (event) => {
-//   event.preventDefault();
+document.onreadystatechange = function() {
+	if (document.readyState !== "complete") {
+		document.querySelector(
+		  "body").style.visibility = "hidden";
+		document.querySelector(
+		  "#loader").style.visibility = "visible";
+	} else {
+		document.querySelector(
+		  "#loader").style.display = "none";
+		document.querySelector(
+		  "body").style.visibility = "visible";
+	}
+};
 
-  //2.
-//   let mail = new FormData(form);
 
-  //3.
-//   sendMail(mail);
-// })
+
+
+// contact us
+// window.onload = function(){
+
+	
+// }
 

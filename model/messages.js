@@ -6,11 +6,9 @@ const messageSchema = new Schema({
     title : {
         type:String
     },
-
     name : {
         type:String
     },
-    
     date : {
        type: Date
     },

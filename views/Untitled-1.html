@@ -445,3 +445,114 @@
               <span class="sr-only">Next</span>
             </a>
           </div>
+
+
+
+
+
+          // POST route from contact form
+// const GMAIL_USER = process.env.GMAIL_USER
+// const GMAIL_PASS = process.env.GMAIL_PASS
+
+// app.post('/contact-us', (req, res) => {
+
+  // Instantiate the SMTP server
+  // const smtpTrans = nodemailer.createTransport({
+  //   host: 'smtp.gmail.com',
+  //   port: 465,
+  //   secure: true,
+  //   auth: {
+  //     user: GMAIL_USER,
+  //     pass: GMAIL_PASS
+  //   }
+  // })
+
+  // Specify what the email will look like
+  // const mailOpts = {
+  //   from: 'Your sender info here', // This is ignored by Gmail
+  //   to: GMAIL_USER,
+  //   subject: 'New message from contact form at NLCFFUTA.org',
+  //   text: `${req.body.name} (${req.body.email}) says: ${req.body.message}`
+  // }
+
+  // Attempt to send the email
+//   smtpTrans.sendMail(mailOpts, (error, response) => {
+//     if (error) {
+//       console.log(error);
+//       res.status(500).send("Something went wrong.");
+//     } else {
+//       res.status(200).send("Email successfully sent to recipient!");
+//     }
+//   })
+// })
+
+
+
+// https://nodemailer-vic-lo.herokuapp.com/send
+
+// const sendMail = (mail) => {
+  //1.
+  // fetch("C:\Users\Enoch\nodeApplication\Nlcffuta", {
+    // method: "post", //2.
+    // body: mail, //3.
+
+//   }).then((response) => {
+//     return response.json();
+//   });
+// };
+
+// const transporter = nodemailer.createTransport({
+//   host: "smtp.live.com", //replace with your email provider
+//   port: 587,
+//   auth: {
+//     user: process.env.EMAIL,
+//     pass: process.env.PASS,
+//   },
+// });
+
+
+// verify connection configuration
+// transporter.verify(function (error, success) {
+//   if (error) {
+//     console.log(error);
+//   } else {
+//     console.log("Server is ready to take our messages");
+//   }
+// });
+
+
+// app.post("/send", (req, res) => {
+//   //1.
+//   let form = new multiparty.Form();
+//   let data = {};
+//   form.parse(req, function (err, fields) {
+//     console.log(fields);
+//     Object.keys(fields).forEach(function (property) {
+//       data[property] = fields[property].toString();
+//     });
+
+    //2. You can configure the object however you want
+    // const mail = {
+    //   from: data.name,
+    //   to: process.env.EMAIL,
+    //   subject: data.subject,
+    //   text: `${data.name} <${data.email}> \n${data.message}`,
+    // };
+
+    //3.
+//     transporter.sendMail(mail, (err, data) => {
+//       if (err) {
+//         console.log(err);
+//         res.status(500).send("Something went wrong.");
+//       } else {
+//         res.status(200).send("Email successfully sent to recipient!");
+//       }
+//     });
+//   });
+// });
+
+
+
+<span class="day"><%= blog[i].date.toString('utf8').slice(8,10) %></span>
+                          <span class="mos"><%= blog[i].date.toString('utf8').slice(4,7) %></span>
+                          <span class="yrs"><%= blog[i].date.toString('utf8').slice(11,15) %></span>

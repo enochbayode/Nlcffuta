@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const Schema  = mongoose.Schema;
+const secret  = require('../config/secret');
 
 const contactSchema = new Schema({
     name : {
@@ -13,16 +14,21 @@ const contactSchema = new Schema({
     },
     
     subject :{
-        type:String
+        type:String,
+        required: true
     },
 
     message:{
-        type:String
+        type:String,
+        required: true
     }
     
-    
 
-})
-
+});
 
 module.exports = mongoose.model('ContactUs', contactSchema);
+
+
+
+
+

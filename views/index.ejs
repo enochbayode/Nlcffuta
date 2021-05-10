@@ -6,7 +6,6 @@
   <title>New Life Campus Fellowship, FUTA</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" >
   <link href="css/style.css"  rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
   <link href="owl.carousel.min.css" rel="stylesheet">
@@ -16,6 +15,7 @@
 </head>
 
 <body>
+  <div id="loader" class="center"></div>
     <!-- Navbar Begins -->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
       <div class="container"> 
@@ -39,12 +39,11 @@
       </div>
     </nav>
   <!-- Navbar Ends -->
-    
+
     <div class="home-top-img">
-      <h2 class="top-text">God's <b class="bt">Prestigious</b>  People</h2><br>
-      <!-- <center>
-      <button class="button-wrapper" type="button">Save your spirit</button>
-      </center> -->
+      <div class="animate__backInDown">
+        <h2 class="top-text">God's <b class="bt">Prestigious</b>  People</h2><br>
+      </div>
     </div>
 
     <div class="container">
@@ -62,8 +61,10 @@
         <div class="row">
           <div class="col-sm-1"></div>
           <div class="col-sm-10">
-            <p style="margin-top: 0%; color: #768495;">
-              Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error aut quas voluptatum, eaque molestiae quibusdam doloremque incidunt neque? Sequi sint molestiae iure harum! Dolore voluptatibus porro rerum fugit doloremque perferendis.
+            <p style="margin-top: 0%; color: #495057;">
+              New Life Campus Fellowship FUTA (NLCFFUTA) chapter is a place where people are taught the words of 
+              God and how to engage it, It is a place where people are taught and mentored in the principle and precerpts of 
+              the kingdom.
               <a href="/about" class="learn-more"> Read more</a>
             </p><br><br>
           </div>
@@ -76,7 +77,7 @@
 
     <div class="president">
       <div class="container">
-        <div class="row section">
+        <div class="row section animate__bounceInLeft__4s">
           <% for (var i = 0; i < president.length; i++  ){ %>
             <div class="col-sm-8">
             <i class="fa fa-quote-left" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i>
@@ -174,10 +175,10 @@
                   <div class="box-cont shadow p-3 mb-5 bg-white rounded">
                       <h5 class="blog-title"><%= event[i].title  %></h5>
                       <i class="fa fa-calendar blog-icons" aria-hidden="true">
-                      <span class="day"><%= event[i].date.toString().slice(0,4) %></span>
-                      <span class="day"><%= event[i].date.toString().slice(8,10) %></span>
-                      <span class="mos"><%= event[i].date.toString().slice(4,7) %></span>
-                      <span class="yrs"><%= event[i].date.toString().slice(11,15) %></span>
+                      <span class="day"><%= event[i].date.toString('utf8').slice(0,4) %></span>
+                      <span class="day"><%= event[i].date.toString('utf8').slice(8,10) %></span>
+                      <span class="mos"><%= event[i].date.toString('utf8').slice(4,7) %></span>
+                      <span class="yrs"><%= event[i].date.toString('utf8').slice(11,15) %></span>
                       </i><br>
                       <i class="fa fa-map-marker" aria-hidden="true" style="color:#495057;"></i><span class="bolder" style="color:#495057;"> <%= event[i].venue %></span><br>
                       <p class="blog-text" style="color: #768495;"><%= event[i].excerpt %></p>
@@ -239,7 +240,7 @@
 
         <!-- Recent Blogs -->
         <div class="row " >
-          <% for (var i = 0; i < blog.length; i++  ){ %>
+          <% for (var i = 0; i < 3; i++  ){ %>
             <div class="col-sm-4 justify-content-center d-flex">
                 <div class="">
                     
@@ -249,9 +250,9 @@
                     <div class="box-cont shadow p-3 mb-5 bg-white rounded">
                         <i class="fa fa-calendar blog-icons" aria-hidden="true">
                           <span class="day"><%= blog[i].date.toString().slice(0,4) %></span>
-                          <span class="day"><%= blog[i].date.toString().slice(8,10) %></span>
-                          <span class="mos"><%= blog[i].date.toString().slice(4,7) %></span>
-                          <span class="yrs"><%= blog[i].date.toString().slice(11,15) %></span>
+                          <span class="day"><%= blog[i].date.toString('utf8').slice(8,10) %></span>
+                          <span class="mos"><%= blog[i].date.toString('utf8').slice(4,7) %></span>
+                          <span class="yrs"><%= blog[i].date.toString('utf8').slice(11,15) %></span>
                         </i><br><br>
                         <h6 class="blog-title"><%= blog[i].title  %></h6>
                         <h6 style="color:#495057">Gene: <%= blog[i].category %></h6>
@@ -267,7 +268,7 @@
       <!-- Recent blog ends -->
            
       <div class="row">
-        <div class="col-sm-6"><br>
+        <div class="col-sm-7"><br>
           <i class="fa fa-quote-left" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i>
           <p class="heading-text">
             <span style="color: #495057;" class="dyn-text" id='text'></span><span class="cursor cursor-typin" id="cursor">&nbsp;</span>
@@ -275,7 +276,7 @@
           <i class="fa fa-quote-right" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i><br><br>
         </div>
 
-        <div class="col-sm-6">
+        <div class="col-sm-5">
           <h3 class="text-center bolder">NEWSLETTER</h3>
           <p class="text-center">Subcribe to our news letter to get updated about new events</p>
           
@@ -303,10 +304,10 @@
             <span class="name">New Life Campus</span><br>
             <span class="name-lite">Fellowship, FUTA.</span><br><br>
             
-            <p class="btm-dsg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum ad cumque magnam</p>
+            <p class="btm-dsg">Connect with us on our social media platforms</p>
 
             <!--twitter-->
-            <a href=""><button type="button" class="btn social-link"><i class="fa fa-twitter"></i></button></a>
+            <a href="https://twitter.com/new_futa?s=09"><button type="button" class="btn social-link"><i class="fa fa-twitter"></i></button></a>
             <!--Google-->
             <a href="https://chat.whatsapp.com/DT3Ga9NbHtDLlbDOpQYawN"><button type="button" class="btn social-link"><i class="fa fa-whatsapp"></i> </button></a>
             <!--Google-->
@@ -314,7 +315,7 @@
             <!--Google-->
             <a href="https://instagram.com/nlcffuta" target="_blank" rel="noopener noreferrer"><button type="button" class="btn social-link"><i class="fa fa-instagram"></i> </button></a>
             <!--Youtube-->
-            <a href=""><button type="button" class="btn social-link"><i class="fa fa-youtube"></i> </button></a>
+            <a href="https://m.youtube.com/channel/UC4Ia7o0Fw41BJpVrNqdeeYg"><button type="button" class="btn social-link"><i class="fa fa-youtube"></i> </button></a>
           </div>
           
           <div class="col-sm-2">
@@ -330,8 +331,8 @@
           <div class="col-sm-3">
             <br><br>
             <h4 class="btm-dsg">Contact Information</h4><br><br>
-            <span class="btm-dsg"><i class="fa fa-map-marker" aria-hidden="true"></i>   153 William plaza Futa, Akure</span><br><br>
-            <span><a href="" class="btm-link blog-a"><i class="fa fa-phone" aria-hidden="true"></i>   +234 8102396347</a></span><br><br>
+            <span class="btm-dsg"><i class="fa fa-map-marker" aria-hidden="true"></i>  Opposite redemption lodge, Apatapiti FUTA South gate Akure</span><br><br>
+            <span><a href="callto:08025379069" class="btm-link blog-a"><i class="fa fa-phone" aria-hidden="true"></i>   +234 8025379069</a></span><br><br>
           </div>
 
           <div class="col-sm-3">
@@ -348,17 +349,16 @@
           </div>
 
         </div>
-      
-        <center>
-          <p style="color: white;">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe quae blanditiis provident? Dolores nesciunt dignissimos </p><br>
-          
-        </center>
             
       </div><br>
       
     </div>
     <!-- Bottom section Ends -->
 
+    <script>
+
+      
+    </script>
 
     <script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
     <script src="Js/owl.carousel.min.js"></script>

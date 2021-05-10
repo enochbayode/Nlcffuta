@@ -6,15 +6,16 @@
   <title>New Life Campus Fellowship, FUTA</title>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" type="text/css" rel="stylesheet" >
   <link href="css/design.css"  rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="css/icomoon.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
   <link href="owl.carousel.min.css" rel="stylesheet">
   <link href="owl.theme.default.min.css" rel="stylesheet">
+  <script src="https://cdn.ckeditor.com/4.16.0/standard/ckeditor.js"></script>
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css " rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+    <div id="loader" class="center"></div>
   <div class="wrapper">
     <!-- Sidebar Holder -->
     <nav id="sidebar">
@@ -92,7 +93,7 @@
         </nav>
 
         <div class="container">
-        <div class="">
+         <div class="">
             
             <!-- Button trigger modal -->
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
@@ -141,10 +142,15 @@
                                 <textarea class="form-control" type="text" name="excerpt" id="exampleFormControlTextarea1" rows="3" required></textarea>
                             </div>
 
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="exampleFormControlTextarea1">Content</label>
                                 <textarea class="form-control" type="text" name="content" id="exampleFormControlTextarea1" rows="3" required></textarea>
-                            </div>
+                            </div> -->
+
+                            <textarea name="editor1"></textarea>
+                            <script>
+                                    CKEDITOR.replace( 'editor1' );
+                            </script>
 
                             <div class="form-group">
                                 <label for="exampleFormControlFile1">Upload the Image file (png,jpg & jpeg)</label>

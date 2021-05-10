@@ -13,22 +13,25 @@ const UpcomingEvent = require('../model/Events');
 const ContactUs = require('../model/contact');
 
 
-// router.post('/contact-us', (req, res) => {
+router.post('/contact-us', (req, res) => {
 
-//   const Contact = new ContactUs({
+  const Contact = new ContactUs({
 
-//      name : req.body.name,
-//      email : req.body.email,
-//      subject: req.body.subject,
-//      message: req.body.message
+     name : req.body.name,
+     email : req.body.email,
+     subject: req.body.subject,
+     message: req.body.message
 
-//   }).save((err,Contact) => {
-//      if(err) return console.error(err);
-//      res.redirect('/contact');
-//   });
+    
+  }).save((err,Contact) => {
+     if(err) return console.error(err);
+     res.redirect('/contact');
+  });
+
+  
 
    
-// })
+})
 
 /* GET contact page. */
 router.get('/contact', function(req, res, next) {
@@ -63,12 +66,17 @@ router.get('/', (req,res)=>{
       .exec((err,president)=>{
 
   Messages
-      .find({})
+      .find({}).limit(3)
       .sort({'date' : -1})
       .exec((err,Msg)=>{
 
+        var options = {
+            "limit": 3,
+            // "skip": 10,
+            // "sort": "title"
+        }
   Blog
-     .find({})
+     .find({}).limit(3)
      .sort({'date' : -1})
      .exec((err,blog)=>{
 
@@ -78,7 +86,7 @@ router.get('/', (req,res)=>{
     .exec((err,gallery)=>{
 
   UpcomingEvent
-    .find({})
+    .find({}).limit(3)
     .sort({'date' : -1})
     .exec((err,event)=>{    
 
@@ -280,8 +288,8 @@ router.get('/blogs', (req,res)=>{
     console.log('query = ', req.query)
     const limit = req.query.limit ? req.query.limit: null;
     const skip = req.query.skip ? req.query.skip: null;
+    //    .find({}, null, {limit: parseInt(skip), skip: parseInt(skip)})
   Blog
- //    .find({}, null, {limit: parseInt(skip), skip: parseInt(skip)})
   .find({})  
       .sort({'date' : -1})
       .exec((err,blog)=>{
@@ -302,77 +310,12 @@ router.get('/:id', (req,res)=>{
   Blog.findOne({ _id :req.params.id})
   .exec((err,blog)=>{
       res.render('blog-single',{
+          user: req.user,
           blog : blog,
           title: 'Blog-Single'
       })
   })
 })
-
-
-
-
-// /* GET about page. */
-// router.get('/about', function(req, res, next) {
-//   res.render('about',
-//     { title: 'About Us' } 
-//     );
-//   });
-
-// router.get('/contact-success', function(req, res, next) {
-//   res.render('contact-success',
-//     { title: '' } 
-//     );
-//   });
-
-// router.get('/contact-failure', function(req, res, next) {
-//   res.render('contact-failure',
-//     { title: '' } 
-//     );
-//   });
-
-// router.get('/categories/:cat', (req,res)=>{
-//   Product.find({ category : req.params.cat}) 
-//   .exec((err,category)=>{
-//       res.render('categories', {
-//           category:category,
-//           param: req.params.cat,
-//           title:'Category'
-//       })
-//   })
-// })
-
-
-
-/* GET about page. */
-// router.get('/messages', function(req, res, next) {
-//   res.render('messages',
-//     { title: 'Messages' } 
-//     );
-//   });
-
-/* GET  page. */
-// router.get('/UploadGal', function(req, res, next) {
-//   res.render('UploadGal',
-//     { title: 'Upload-Gallery' } 
-//     );
-// });
-
-
-/* GET  page. */
-// router.get('/UploadPresi', function(req, res, next) {
-//   res.render('UploadPresi',
-//     { title: 'Upload-President' } 
-//     );
-// });
-
-
-// router.get("*" , function(req, res){
-//   res.render("404 page", 
-//   { title: 'Not Found' } 
-//   );
-// })
-
-
 
 
 
