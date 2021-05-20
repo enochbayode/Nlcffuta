@@ -1,5 +1,3 @@
-// 'https://cdn.boomcdn.com/libs/animate-css/3.7.0/animate.css'
-
 //importing modules (libraries)
 var path = require('path');
 var express = require('express');
@@ -56,10 +54,6 @@ app.use((error, req, res, next) => {
 });
 });
 
-
-
-
-
 // -----------creation of database ends----------------------
 
 
@@ -101,18 +95,14 @@ app.use('/', PageRoutes);
 const userRoute = require('./routes/userRegRoutes');
 app.use('/auth', userRoute)
 
-
 var contact = require('./model/contact');
-
 
 const adminRoutes = require('./routes/adminRoute');
 // const { response } = require('express');
 app.use('/admin', adminRoutes );
 
 
-
 //configuring the listener and the declaration of port
-
 app.listen(secret.PORT, () => {
     console.log('This application is already running on port ' + secret.PORT);
 });
