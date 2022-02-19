@@ -12,6 +12,9 @@ body {min-height:200vh;
 
 .nav-content{
   justify-content: right !important;
+  float: right !important;
+  text-align: right !important;
+  background-position: 0% !important;
 
 }
 
