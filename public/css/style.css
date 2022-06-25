@@ -589,6 +589,13 @@ background: rgba(255, 255, 255, 0.05);
     color: white
 }
 
+.line-mf {
+    width: 40px;
+    height: 5px;
+    background-color: #0078ff;
+    margin: 0 auto;
+  }
+
 .cursor{
     background-color:  #495057;
     display: inline-block;

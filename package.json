@@ -5,7 +5,7 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start":"node app.js"
+    "start": "node app.js"
   },
   "keywords": [
     "NLCFFUTA"
@@ -13,20 +13,23 @@
   "author": "Enoch Bayode",
   "license": "MIT",
   "dependencies": {
+    "@google-cloud/storage": "^5.14.3",
     "animate.css": "^4.1.1",
-    "bcrypt-nodejs": "0.0.3",
+    "bcrypt": "^5.0.1",
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",
     "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
-    "ejs": "^3.1.5",
-    "express": "^4.17.1",
-    "express-flash": "0.0.2",
-    "express-session": "^1.17.1",
+    "ejs": "^3.1.6",
+    "express": "^4.17.3",
+    "express-flash": "^0.0.2",
+    "express-session": "^1.17.2",
+    "firebase": "^9.6.10",
     "flash": "^1.1.0",
     "mongoose": "^5.10.4",
     "morgan": "^1.10.0",
     "multer": "^1.4.2",
+    "multer-google-storage": "^1.3.0",
     "multiparty": "^4.2.2",
     "nodemailer": "^6.4.17",
     "nodemon": "^2.0.6",
@@ -34,6 +37,7 @@
     "passport-local": "^1.0.0",
     "passport-oauth": "^1.0.0",
     "path": "^0.12.7",
-    "sharp": "^0.26.3"
+    "sharp": "^0.26.3",
+    "uuid": "^8.3.2"
   }
 }

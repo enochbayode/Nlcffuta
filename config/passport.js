@@ -1,9 +1,8 @@
-
-const express = require('express')
+const express = require("express")
 const router = express.Router();
-const passport = require ('passport');
-var LocalStrategy = require ('passport-local').Strategy;
-const User = require('../model/user');
+const passport = require ("passport");
+var LocalStrategy = require ("passport-local").Strategy;
+const User = require("../model/user");
 
 //serialize and desirialize
 
@@ -18,12 +17,9 @@ passport.deserializeUser(function(id, done){
   })
 });
 
-
-
-
-passport.use('local-login', new LocalStrategy({
-    usernameField: 'email',
-    passwordField: 'password',
+passport.use("local-login", new LocalStrategy({
+    usernameField: "email",
+    passwordField: "password",
     passReqToCallback:true
 
 }, function(req, email, password, done){
@@ -32,10 +28,12 @@ passport.use('local-login', new LocalStrategy({
         if(err) return done(err);
 
         if(!user){
-            return done(null, false, req.flash('loginMessage', 'Incorrect username or password!'));
+            return done(null, false, req.flash("loginMessage",
+            "Incorrect username or password!"));
         }
         if(!user.comparePassword(password)){
-            return done(null, false, req.flash('loginMessage', 'Incorrect username or password!'));
+            return done(null, false, req.flash("loginMessage",
+            "Incorrect username or password!"));
         }
         return done(null, user);
     })
@@ -46,5 +44,5 @@ passport.use('local-login', new LocalStrategy({
 
 
 
-  module.exports = router;
+module.exports = router;
 
