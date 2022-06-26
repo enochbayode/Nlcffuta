@@ -9,11 +9,11 @@ const Messages = require('../model/messages');
 const UpcomingEvent = require('../model/Events');
 const President = require('../model/President');
 const Gallery = require('../model/Gallery');
-const { Storage } = require('../storage');
+const { Storage } = require("../storage");
 
 console.log(process.env.Storage_url) 
 
-const storage = new Storage();
+const storage = Storage();
 
 // const storage = multer.diskStorage({
 //     destination: './public/uploads/files',
