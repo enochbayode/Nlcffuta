@@ -10,7 +10,7 @@ const flash =  require("connect-flash");
 const session = require("express-session");
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
-// require("dotenv").config();
+require("dotenv").config();
 // const { connect, connection } = require("mongoose");
 // const {config} = require("dotenv");
 
@@ -22,41 +22,7 @@ app.use(bodyParser.json())
 
 // body parser middleware
 app.use(bodyParser.urlencoded({ extended: true }));
-
-// connecting to mongodb
-const mongoose = require("mongoose");
-// useFindAndModify set to false
-// mongoose.set("useFindAndModify", true);
-// use create index set to true
-// mongoose.set("useCreateIndex", true);
-
-mongoose.connect(secret.databaseURL, {
-    useNewUrlParser:true,
-    useUnifiedTopology:true
-}).catch(err => {
-  console.log("could not connect to mongoDB", err)
-})
  
-
-var db = mongoose.connection;
-// db.on("error", console.error.bind(console, "connection error:"));
-db.once("open", function() {
-console.log("we are already connected to the server database")
-});
-
-
-app.use((error, req, res, next) => {
-  res.status(error.status || 500).send({
-  error: {
-  status: error.status || 500,
-  message: error.message || "Internal Server Error",
-  },
-});
-});
-
-// -----------creation of database ends----------------------
-
-
 //-----------------settting view up engines---------
 // view engine setup
 // using ejs template
@@ -97,15 +63,28 @@ app.use("/auth", userRoute)
 
 var contact = require("./model/contact");
 
-const { adminRoutes } = require("./routes/adminRoute");
-// const { response } = require("express");
+const adminRoutes = require("./routes/adminRoute");
 app.use("/admin", adminRoutes );
 
 
-//configuring the listener and the declaration of port
-app.listen(secret.PORT, () => {
-    console.log("This application is already running on port " + secret.PORT);
+// connecting to mongodb
+const mongoose = require('mongoose');
+// useFindAndModify set to false
+mongoose.set('useFindAndModify', false);
+// use create index set to true
+mongoose.set('useCreateIndex', true);
+
+mongoose.connect(process.env.databaseURL, {
+  useNewUrlParser:true,
+  useUnifiedTopology:true
+}).then(()=>{
+console.log('we are already connected to the server database');
+app.listen(process.env.PORT, () => {
+  console.log("This application is already running on port " , process.env.PORT);
 });
+}).catch(err => {
+console.log('could not connect to mongoDB', err)
+})
 
 
 

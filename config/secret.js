@@ -1,9 +1,8 @@
 
 module.exports = {
     databaseURL: process.env.databaseURL,
-    PORT:process.env.PORT,
-
-    
+    PORT: process.env.PORT,
+   
 }
 
 

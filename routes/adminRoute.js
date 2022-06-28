@@ -1,5 +1,6 @@
 const express = require('express');
 const adminrouter = express.Router();
+// const { adminRoutes } = require("./routes/adminRoute");
 const multer = require('multer');
 const path =  require('path');
 const Blog = require('../model/blog');
@@ -13,7 +14,7 @@ const { Storage } = require("../storage");
 
 console.log(process.env.Storage_url) 
 
-const storage = Storage();
+const storage = new Storage();
 
 // const storage = multer.diskStorage({
 //     destination: './public/uploads/files',
@@ -71,7 +72,7 @@ adminrouter.post('/post-bg',  (req,res)=>{
 })
 
 //this route helps us to delete a blog post
-router.post('/blogDelete/:id', (req,res)=>{
+adminrouter.post('/blogDelete/:id', (req,res)=>{
     
     Blog.findByIdAndRemove({ _id : req.params.id }).then((Blog)=>{
         res.redirect('/UploadBgs')
@@ -80,7 +81,7 @@ router.post('/blogDelete/:id', (req,res)=>{
 });
 
 // excos info
-router.post('/excos-info', (req, res) => {
+adminrouter.post('/excos-info', (req, res) => {
     const text = new ExcosInfo({
 
         text : req.body.text,
@@ -313,4 +314,4 @@ function isAuthenticated(req,res,next){
 
 
 
-module.exports = { adminrouter };
+module.exports = adminrouter;
