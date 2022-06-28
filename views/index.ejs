@@ -218,15 +218,15 @@
     </div>
 
     
-    <div class="wrapper">
-      <div class="carousel-gallery owl-carousel owl-theme">
-        <% for (var i = 0; i < gallery.length; i++  ){ %>
-        <div class="item">
-            <img class="d-block w-100 gal" src="<%= gallery[i].imgUrl %>" width="100%"> 
-        </div>
-        <% } %>       
-      </div>
-      
+    
+
+    <div class="gallery">
+      <% for (var i = 0; i < gallery.length; i++  ){ %>
+        <a target="_blank" href="<%= gallery[i].imgUrl %>">
+          <img src="<%= gallery[i].imgUrl %>" alt="nlcf-img" width="600" height="400">
+        </a>
+        <div class="desc">Add a description of the image here</div>
+      <% } %> 
     </div>
     
 
