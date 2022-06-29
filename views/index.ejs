@@ -116,7 +116,7 @@
         
         <div class="row">
           <% for (var i = 0; i < Msg.length; i++  ){ %>
-            <div class="col-sm-4 justify-content-center d-flex animate__animated animate__zoomInLeft animate__delay-2s">
+            <div class="col-sm-4 justify-content-center d-flex animate__animated animate__bounce animate__delay-4s">
               <div class="">
                 
                 <img src="<%= Msg[i].imgUrl %>"  height="150px" class="msg-img animate__zoomInLeft">
@@ -170,10 +170,10 @@
 
         <div class="row">
           <% for (var i = 0; i < event.length; i++  ){ %>
-          <div class="col-sm-4 justify-content-center d-flex">
+          <div class="col-sm-4 justify-content-center d-flex animate__animated animate__bounce animate__delay-4s">
               <div class="">
                   <!-- <a href="#exampleModal2" class=" blog-a" data-toggle="modal" data-target="#exampleModal2"> -->
-                  <img src="<%= event[i].imgUrl %>" height="150px" class="msg-img animate__zoomIn">
+                  <img src="<%= event[i].imgUrl %>" height="150px" class="msg-img">
       
                   <div class="box-cont shadow p-3 mb-5 bg-white rounded">
                       <h5 class="blog-title"><%= event[i].title  %></h5>
@@ -244,7 +244,7 @@
         <!-- Recent Blogs -->
         <div class="row " >
           <% for (var i = 0; i < 3; i++  ){ %>
-            <div class="col-sm-4 justify-content-center d-flex animate__animated animate__lightSpeedInLeft">
+            <div class="col-sm-4 justify-content-center d-flex animate__animated animate__bounce animate__delay-4s">
                 <div class="">
                     
                     <a href="<%= blog[i]. _id %>" class=" blog-a">
