@@ -367,7 +367,7 @@ text-align: center;
 .msg-img{
     width: 100%;
     min-height: 265px;
-    
+
 }
 .blog-title{
     color: black;
@@ -400,6 +400,11 @@ text-align: center;
     color: white;
     padding: 10px 70px;
 }
+
+div.icon-img:hover{
+    color: #377DFF;
+}
+
 .wrapper{
     width: 100%;
     height: auto;
