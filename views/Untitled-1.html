@@ -151,6 +151,15 @@
   
 </div>
 
+<div class="gallery">
+  <% for (var i = 0; i < gallery.length; i++  ){ %>
+    <a target="_blank" href="<%= gallery[i].imgUrl %>">
+      <img src="<%= gallery[i].imgUrl %>" alt="nlcf-img" width="600" height="400">
+    </a>
+    <div class="desc">Add a description of the image here</div>
+  <% } %> 
+</div>
+
 <!-- /post/{{ post._id }} -->
    <!-- /blog-single/<%= blog[i].id %> -->
 

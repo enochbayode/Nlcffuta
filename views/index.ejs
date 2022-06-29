@@ -119,7 +119,7 @@
             <div class="col-sm-4 justify-content-center d-flex animate__animated animate__zoomInLeft animate__delay-2s">
               <div class="">
                 
-                <img src="<%= Msg[i].imgUrl %>"  height="150px" class="msg-img">
+                <img src="<%= Msg[i].imgUrl %>"  height="150px" class="msg-img animate__zoomInLeft">
 
                 <div class="box shadow p-3 mb-5 bg-white rounded">
                   <!-- bottom contents -->
@@ -173,7 +173,7 @@
           <div class="col-sm-4 justify-content-center d-flex">
               <div class="">
                   <!-- <a href="#exampleModal2" class=" blog-a" data-toggle="modal" data-target="#exampleModal2"> -->
-                  <img src="<%= event[i].imgUrl %>" height="150px" class="msg-img">
+                  <img src="<%= event[i].imgUrl %>" height="150px" class="msg-img animate__zoomIn">
       
                   <div class="box-cont shadow p-3 mb-5 bg-white rounded">
                       <h5 class="blog-title"><%= event[i].title  %></h5>
@@ -217,13 +217,16 @@
       </div>
     </div>
 
-    <div class="gallery">
-      <% for (var i = 0; i < gallery.length; i++  ){ %>
-        <a target="_blank" href="<%= gallery[i].imgUrl %>">
-          <img src="<%= gallery[i].imgUrl %>" alt="nlcf-img" width="600" height="400">
-        </a>
-        <div class="desc">Add a description of the image here</div>
-      <% } %> 
+    <div class="wrapper">
+      <div class="carousel-gallery owl-carousel owl-theme">
+        <% for (var i = 0; i < gallery.length; i++  ){ %>
+        <div class="item gal-div">
+          <a target="_blank" href="<%= gallery[i].imgUrl %>"></a>
+            <img class="d-block w-100 gal" src="<%= gallery[i].imgUrl %>"> 
+          </a>
+        </div>
+        <% } %>       
+      </div>
     </div>
     
 
@@ -241,12 +244,12 @@
         <!-- Recent Blogs -->
         <div class="row " >
           <% for (var i = 0; i < 3; i++  ){ %>
-            <div class="col-sm-4 justify-content-center d-flex">
+            <div class="col-sm-4 justify-content-center d-flex animate__animated animate__lightSpeedInLeft">
                 <div class="">
                     
                     <a href="<%= blog[i]. _id %>" class=" blog-a">
-                    <img src="<%= blog[i].imgUrl %> " height="120px" class="msg-img">
-        
+                    <img src="<%= blog[i].imgUrl %> " height="120px" class="msg-img ">
+                    
                     <div class="box-cont shadow p-3 mb-5 bg-white rounded">
                         <i class="fa fa-calendar blog-icons" aria-hidden="true">
                           <span class="day"><%= blog[i].date.toString().slice(0,4) %></span>
