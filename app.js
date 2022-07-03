@@ -10,8 +10,6 @@ const session = require("express-session");
 const nodemailer = require("nodemailer");
 const multiparty = require("multiparty");
 require("dotenv").config();
-// const { connect, connection } = require("mongoose");
-// const {config} = require("dotenv");
 
 //declaration and creation of express app
 var app = express();

@@ -48,24 +48,24 @@
       <div class="container">
         <div class="section">
           <div class="row"  >
-            <% for (var i = 0; i < blog.length; i++  ){ %>
+            <% for (let d = 0; d < blog.length; d++  ){ %>
               <div class="col-sm-4 justify-content-center d-flex">
                   <div class="">
                       
-                      <a href="<%= blog[i]. _id %>" class=" blog-a">
-                      <img src="<%= blog[i].imgUrl %> " height="120px" class="msg-img">
+                      <a href="<%= blog[d]. _id %>" class=" blog-a">
+                      <img src="<%= blog[d].imgUrl %> " height="120px" class="msg-img">
           
                       <div class="box-cont shadow p-3 mb-5 bg-white rounded">
                         <!-- <span ><%= blog[i].date.toString() %></span> -->
                           <i class="fa fa-calendar blog-icons" aria-hidden="true">
-                            <span class="day"><%= blog[i].date.toString().slice(0,4) %></span>
-                            <span class="day"><%= blog[i].date.toString().slice(8,10) %></span>
-                            <span class="mos"><%= blog[i].date.toString().slice(4,7) %></span>
-                            <span class="yrs"><%= blog[i].date.toString().slice(11,15) %></span>
+                            <span class="day"><%= blog[d].date.toString().slice(0,4) %></span>
+                            <span class="day"><%= blog[d].date.toString().slice(8,10) %></span>
+                            <span class="mos"><%= blog[d].date.toString().slice(4,7) %></span>
+                            <span class="yrs"><%= blog[d].date.toString().slice(11,15) %></span>
                           </i><br><br>
-                          <h6 class="blog-title"><%= blog[i].title  %></h6>
-                          <h6 style="color:#495057">Gene: <%= blog[i].category %></h6>
-                          <p class="blog-text" style="color: #768495;"><%= blog[i].excerpt %></p>
+                          <h6 class="blog-title"><%= blog[d].title  %></h6>
+                          <h6 style="color:#495057">Gene: <%= blog[d].category %></h6>
+                          <p class="blog-text" style="color: #768495;"><%= blog[d].excerpt %></p>
                           
                       </div>
                       </a>

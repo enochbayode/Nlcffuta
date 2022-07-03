@@ -182,7 +182,7 @@
             <div class="col-sm-3"></div>
             <div class="col-sm-6">
               <h2 class="text-center bolder">Meet Our Executives.</h2>
-              <% for (var i = 0; i < text.length; i++  ){ %>
+              <% for (let i = 0; i < text.length; i++  ){ %>
               <p class="text-center"> <%= text[i].text %></p><br><br>
               <% } %>
             </div>
@@ -190,21 +190,21 @@
           </div>
           
           <div class="row">
-            <% for (var i = 0; i < excos.length; i++  ){ %>
+            <% for (var n = 0; n < excos.length; n++  ){ %>
               <div class="col-sm-4">
                   <div class="box shadow p-3 mb-5 bg-white rounded">
                       <center>
                         <div class="" style="width: 60%; height: 40%;">
-                          <img src="<%= excos[i].imgUrl %>" height="200px" class="excos-img">
+                          <img src="<%= excos[n].imgUrl %>" height="200px" class="excos-img">
                         </div>
                       </center>
                       <!-- bottom contents  -->
                       <div class="btm-box-content">
-                          <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> <%= excos[i].name %></span><br>
-                          <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> <%= excos[i].dept %></span><br>
-                          <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> <%= excos[i].phone  %></span><br>
-                          <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"><%= excos[i].office  %></span><br>
-                          <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span><%= excos[i].level  %></span><br>
+                          <i class="fa fa-user Excos" aria-hidden="true"></i><span class="Excos"> Name: </span><span> <%= excos[n].name %></span><br>
+                          <i class="fa fa-graduation-cap Excos" aria-hidden="true" ></i><span class="Excos"> Course: </span><span> <%= excos[n].dept %></span><br>
+                          <i class="fa fa-phone Excos" aria-hidden="true" ></i><span class="Excos"> Phone number: </span><span> <%= excos[n].phone  %></span><br>
+                          <i class="fa fa-briefcase Excos" aria-hidden="true" ></i><span class="bolder" > Office: </span><span class="bolder"><%= excos[n].office  %></span><br>
+                          <i class="fa fa-paper-plane Excos" aria-hidden="true"></i><span class="Excos"> Level: </span><span><%= excos[n].level  %></span><br>
                       </div>
                   </div>
               </div>

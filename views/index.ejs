@@ -81,18 +81,18 @@
     <div class="president">
       <div class="container">
         <div class="row section animate__bounceInLeft__4s">
-          <% for (var i = 0; i < president.length; i++  ){ %>
+          <% for (var p = 0; p < president.length; p++  ){ %>
             <div class="col-sm-8">
             <i class="fa fa-quote-left" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i>
-            <h3 class="bolder"><%= president[i].name %> </h3>
+            <h3 class="bolder"><%= president[p].name %> </h3>
             <p style="font-size: 23px">The President of New Life Campus Fellowship, FUTA</p>
             <p style="font-size: 20px;">
-                <%= president[i].excerpt %>
+                <%= president[p].excerpt %>
             </p>
             <i class="fa fa-quote-right" aria-hidden="true" style="color:#377DFF; font-size:30px;"></i><br>
             </div>
             <div class="col-sm-4">
-                <img src="<%= president[i].imgUrl %>" style="width: 100%; border-radius: 20px;">
+                <img src="<%= president[p].imgUrl %>" style="width: 100%; border-radius: 20px;">
             </div>
           <% } %>
         </div>
@@ -219,10 +219,10 @@
 
     <div class="wrapper">
       <div class="carousel-gallery owl-carousel owl-theme">
-        <% for (var i = 0; i < gallery.length; i++  ){ %>
+        <% for (var g = 0; g < gallery.length; g++  ){ %>
         <div class="item gal-div">
-          <a target="_blank" href="<%= gallery[i].imgUrl %>"></a>
-            <img class="d-block w-100 gal" src="<%= gallery[i].imgUrl %>"> 
+          <a target="_blank" href="<%= gallery[g].imgUrl %>"></a>
+            <img class="d-block w-100 gal" src="<%= gallery[g].imgUrl %>"> 
           </a>
         </div>
         <% } %>       
@@ -243,23 +243,23 @@
 
         <!-- Recent Blogs -->
         <div class="row " >
-          <% for (var i = 0; i < 3; i++  ){ %>
+          <% for (var b = 0; b < 3; b++  ){ %>
             <div class="col-sm-4 justify-content-center d-flex animate__animated animate__bounce animate__delay-4s">
                 <div class="">
                     
-                    <a href="<%= blog[i]. _id %>" class=" blog-a">
-                    <img src="<%= blog[i].imgUrl %> " height="120px" class="msg-img ">
+                    <a href="<%= blog[b]. _id %>" class=" blog-a">
+                    <img src="<%= blog[b].imgUrl %> " height="120px" class="msg-img ">
                     
                     <div class="box-cont shadow p-3 mb-5 bg-white rounded">
                         <i class="fa fa-calendar blog-icons" aria-hidden="true">
-                          <span class="day"><%= blog[i].date.toString().slice(0,4) %></span>
-                          <span class="day"><%= blog[i].date.toString('utf8').slice(8,10) %></span>
-                          <span class="mos"><%= blog[i].date.toString('utf8').slice(4,7) %></span>
-                          <span class="yrs"><%= blog[i].date.toString('utf8').slice(11,15) %></span>
+                          <span class="day"><%= blog[b].date.toString().slice(0,4) %></span>
+                          <span class="day"><%= blog[b].date.toString('utf8').slice(8,10) %></span>
+                          <span class="mos"><%= blog[b].date.toString('utf8').slice(4,7) %></span>
+                          <span class="yrs"><%= blog[b].date.toString('utf8').slice(11,15) %></span>
                         </i><br><br>
-                        <h6 class="blog-title"><%= blog[i].title  %></h6>
-                        <h6 style="color:#495057">Gene: <%= blog[i].category %></h6>
-                        <p class="blog-text" style="color: #768495;"><%= blog[i].excerpt %></p>
+                        <h6 class="blog-title"><%= blog[b].title  %></h6>
+                        <h6 style="color:#495057">Gene: <%= blog[b].category %></h6>
+                        <p class="blog-text" style="color: #768495;"><%= blog[b].excerpt %></p>
                         
                     </div>
                     </a>
