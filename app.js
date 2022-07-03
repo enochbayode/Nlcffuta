@@ -4,7 +4,6 @@ var express = require("express");
 var ejs = require("ejs")
 var bodyParser = require("body-parser")
 var cookieParser = require("cookie-parser");
-const secret  = require("./config/secret");
 const passport = require("passport");
 const flash =  require("connect-flash");
 const session = require("express-session");

@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema  = mongoose.Schema;
-const secret  = require('../config/secret');
 
 const contactSchema = new Schema({
     name : {
