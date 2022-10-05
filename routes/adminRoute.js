@@ -16,13 +16,6 @@ console.log(process.env.Storage_url)
 
 const storage = new Storage();
 
-// const storage = multer.diskStorage({
-//     destination: './public/uploads/files',
-//     filename:function(req,file, cb){
-//         cb(null,file.fieldname + '-' + Date.now() + path.extname(file.originalname));
-//     }
-// });
-
 // inside multer({}), file upto only 100MB can be uploaded
 const upload = storage.upload.fields([
 
